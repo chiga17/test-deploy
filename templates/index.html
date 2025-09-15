@@ -12,6 +12,10 @@
       Показать приветствие
     </button>
 
+    <button hx-get="/time" hx-target="#content" hx-swap="innerHTML">
+      Показать текущее время
+    </button>
+
     <hr>
 
     <form hx-post="/form" hx-target="#content" hx-swap="innerHTML">

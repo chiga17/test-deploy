@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -14,3 +15,9 @@ def hello():
 def form():
     username = request.form.get("username", "Аноним")
     return f"<p>Рад знакомству, {username}! 🎉</p><button hx-get='/' hx-target='body'>Назад</button>"
+
+# New route for htmx: returns current time
+@app.route("/time")
+def time():
+    now = datetime.now().strftime('%H:%M:%S')
+    return f"<p>Текущее время: <b>{now}</b></p>"
