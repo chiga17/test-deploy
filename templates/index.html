@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flask</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  </head>
+  <body>
+    <h1>Мини-сайт на Flask</h1>
+
+    <button hx-get="/hello" hx-target="#content" hx-swap="innerHTML">
+      Показать приветствие
+    </button>
+
+    <hr>
+
+    <form hx-post="/form" hx-target="#content" hx-swap="innerHTML">
+      <label>Введите имя: <input type="text" name="username"></label>
+      <button type="submit">Отправить</button>
+    </form>
+
+    <div id="content"></div>
+  </body>
+</html>
